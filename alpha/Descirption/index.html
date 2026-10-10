@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duolingo Button Microinteraction!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <h1>Duolingo Button Microinteraction!</h1>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!--button will go here-->
+    <section class="box box--button">
+      <!-- put the finished button here -->
+      <p>Button coming soon! :D</p>
+    </section>
+
+    <!-- og interface section -->
+    <section class="box">
+      <h2>Original Interface</h2>
+      <p><a href="https://www.duolingo.com/learn" target="_blank" rel="noopener">https://www.duolingo.com/learn</a></p>
+      <ol>
+        <li>Sign in and go to the <strong>Learn</strong> tab in the left sidebar.</li>
+        <li>Stay on the path map with the circles and the dots connecting them.</li>
+        <li>Find the current lesson: the blue circle with the floating START tag.</li>
+      </ol>
+    </section>
+
+    <!-- the triggers -->
+    <section class="box">
+      <h2>Triggers</h2>
+      <ol>
+        <li><strong>Landing into the site:</strong> when it loads, there's a floating START tag above the next unlocked lesson. The user doesn't have to do anything.</li>
+        <li><strong>Hovering the lesson button:</strong> the cursor turns into a pointer and the button presses down slightly.</li>
+        <li><strong>Moving off the button:</strong> the button goes all the way back up to its original position.</li>
+        <li><strong>Clicking the button:</strong> the button goes all the way down and a popover appears under it.</li>
+        <li><strong>Hovering the popover's START button:</strong> its text changes color.</li>
+      </ol>
+    </section>
+
+    <!-- the rules -->
+    <section class="box">
+      <h2>Rules</h2>
+      <ol>
+        <li><strong>Only the next lesson gets the START tag.</strong> The tag appears over the current, unlocked lesson only. It floats up and down while the user does nothing and goes away once the button is pressed.</li>
+        <li><strong>The button's height follows the cursor.</strong> It is fully raised when resting, pressed down slightly when hovered, and pushed all the way down when clicked. If the cursor leaves before clicking, it always goes back to resting.</li>
+      </ol>
+    </section>
+
+    <!-- the feedback -->
+    <section class="box">
+      <h2>Feedback</h2>
+      <ol>
+        <li><strong>See:</strong> the START tag floating, the cursor turning into a pointer, the button pressing down as its darker bottom edge shrinks, the green popover appearing with the lesson name and a START button, and that button's text changing color on hover.</li>
+        <li><strong>Hear:</strong> nothing. The path map is silent; Duolingo saves its sounds for inside the lesson.</li>
+        <li><strong>Feel:</strong> no vibration on desktop, but the thick bottom edge disappearing makes the button feel like a real button being pushed into the page.</li>
+      </ol>
+    </section>
+
+    <!-- Loops & Modes sectioin -->
+    <section class="box">
+      <h2>Loops &amp; Modes</h2>
+      <h3>Loops</h3>
+      <ol>
+        <li><strong>Idle loop:</strong> the START tag floats up and down forever until the button is pressed.</li>
+        <li><strong>Hover loop:</strong> hovering on and off can repeat endlessly; the button goes down and back up every time.</li>
+        <li><strong>Lesson loop:</strong> after a lesson is finished, the START tag moves to the next circle and the microinteraction starts again there.</li>
+      </ol>
+      <h3>Modes</h3>
+      <ol>
+        <li><strong>Locked:</strong> gray circles further down the path have no START tag and can't be started yet.</li>
+        <li><strong>Completed:</strong> finished circles change color and offer practice instead of a new lesson.</li>
+        <li><strong>Popover open:</strong> the START tag is hidden while the popover is open; clicking elsewhere closes it and the button goes back up.</li>
+        <li><strong>Touch:</strong> phones have no hover, so a tap goes straight to the pressed state.</li>
+      </ol>
+    </section>
+
+    <!-- examples -->
+    <section class="box">
+      <h2>Visuals</h2>
+      <p>Each frame shows one state, with the cursor where the mouse would be.</p>
+
+      <div class="frames">
+
+        <!-- doing nothing -->
+        <figure class="frame">
+          <div class="stage"></div>
+          <figcaption><strong>1. Doing nothing:</strong> the cursor is off to the side and the START tag floats above the raised button.</figcaption>
+        </figure>
+
+        <!-- hovering -->
+        <figure class="frame">
+          <div class="stage"></div>
+          <figcaption><strong>2. Hovering:</strong> the cursor turns into a pointer and the button presses down slightly.</figcaption>
+        </figure>
+
+        <!-- not hovering on it -->
+        <figure class="frame">
+          <div class="stage"></div>
+          <figcaption><strong>3. Not hovering:</strong> the cursor moves off without clicking (dashed line) and the button goes back up.</figcaption>
+        </figure>
+
+        <!-- button is pressed -->
+        <figure class="frame">
+          <div class="stage"></div>
+          <figcaption><strong>4. Pressed:</strong> the button goes all the way down, the START tag disappears and the popover appears.</figcaption>
+        </figure>
+
+        <!-- hovering on button -->
+        <figure class="frame">
+          <div class="stage"></div>
+          <figcaption><strong>5. Hovering START:</strong> the pointer moves onto the popover's START button and its text changes color.</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer">
+    <p>Microinteractions &middot; Project for Microinteractions by Joshua Gratton.</p>
+  </footer>
+
+</body>
+</html>
