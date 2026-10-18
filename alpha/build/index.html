@@ -1,5 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Build</title></head>
-<body><p>Build coming soon.</p></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duolingo Button Microinteraction! | Alpha Build</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <h1>Duolingo Button Microinteraction!</h1>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- the working microinteraction -->
+    <section class="box box--demo">
+      <div class="path">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+        <div class="lesson" id="lesson">
+          <!-- floating START tag -->
+          <div class="tag" id="tag">START</div>
+
+          <!-- lesson button -->
+          <button class="lesson-btn" id="lessonBtn" aria-label="Start lesson" aria-expanded="false" aria-controls="popover">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
+          </button>
+
+          <!-- popover that opens under the button -->
+          <div class="popover" id="popover" hidden>
+            <p class="pop-title">Form basic sentences</p>
+            <p class="pop-sub">Lesson 1 of 4</p>
+            <button class="pop-btn" type="button">START +10 XP</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- triggers -->
+    <section class="box">
+      <h2>Triggers</h2>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+    </section>
+
+    <!-- rules -->
+    <section class="box">
+      <h2>Rules</h2>
+      <h3>Lesson button</h3>
+      <ul>
+        <li>Hover on: button presses down slightly</li>
+        <li>Hover off: button goes back up</li>
+        <li>Click: button presses all the way down and a popover opens under it</li>
+      </ul>
+      <h3>Popover START button</h3>
+      <ul>
+        <li>Hover on: text changes color</li>
+        <li>Hover off: text changes back</li>
+      </ul>
+    </section>
+
+    <!-- feedback -->
+    <section class="box">
+      <h2>Feedback</h2>
+      <ul>
+        <li><strong>See:</strong> button moves down and up, popover appears, text changes color</li>
+        <li><strong>Hear:</strong> none</li>
+        <li><strong>Feel:</strong> none</li>
+      </ul>
+    </section>
+
+    <!-- loops & modes -->
+    <section class="box">
+      <h2>Loops &amp; Modes</h2>
+      <h3>Loops</h3>
+      <ul>
+        <li>START tag floats up and down until the button is clicked</li>
+      </ul>
+      <h3>Modes</h3>
+      <ul>
+        <li>Popover open: START tag is hidden; clicking anywhere else closes the popover</li>
+        <li>Popover closed: button goes back up and the START tag returns</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer">
+    <p>Microinteractions &middot; Project for Microinteractions by Joshua Gratton.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
