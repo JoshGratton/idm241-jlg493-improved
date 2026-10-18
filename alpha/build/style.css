@@ -52,7 +52,7 @@ main { padding-top: 20px; padding-bottom: 20px; }
 .box--demo {
   display: flex;
   justify-content: center;   /* centered horizontally */
-  min-height: 400px;
+  min-height: 360px;
   padding-top: 30px;
 }
 
@@ -63,19 +63,11 @@ main { padding-top: 20px; padding-bottom: 20px; }
   gap: 10px;
 }
 
-/* little dots leading up to the lesson */
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #E5E5E5;
-}
-.dot:nth-child(1) { transform: translateX(-36px); }
-.dot:nth-child(2) { transform: translateX(-22px); }
-.dot:nth-child(3) { transform: translateX(-8px); margin-bottom: 30px; }
-
 /* wraps the tag, ring and popover so they line up */
-.lesson { position: relative; }
+.lesson {
+  position: relative;
+  margin-top: 40px;                   /* room for the floating START tag */
+}
 
 /* ----- gray ring around the button ----- */
 .ring {
