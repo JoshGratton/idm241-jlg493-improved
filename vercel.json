@@ -1,6 +1,8 @@
 {
   "trailingSlash": true,
   "redirects": [
-    { "source": "/", "destination": "/alpha/", "permanent": false }
+    { "source": "/", "destination": "/alpha/description/", "permanent": false },
+    { "source": "/alpha", "destination": "/alpha/description/", "permanent": false },
+    { "source": "/alpha/", "destination": "/alpha/description/", "permanent": false }
   ]
 }
