@@ -30,10 +30,18 @@
           <!-- floating START tag -->
           <div class="tag" id="tag">START</div>
 
-          <!-- lesson button -->
-          <button class="lesson-btn" id="lessonBtn" aria-label="Start lesson" aria-expanded="false" aria-controls="popover">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
-          </button>
+          <!-- progress ring + lesson button -->
+          <div class="ring">
+            <svg class="ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="ring-track" cx="50" cy="50" r="45"/>
+              <circle class="ring-progress" cx="50" cy="50" r="45" pathLength="100"/>
+            </svg>
+
+            <button class="lesson-btn" id="lessonBtn" aria-label="Start lesson" aria-expanded="false" aria-controls="popover">
+              <!-- star with rounded corners -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg>
+            </button>
+          </div>
 
           <!-- popover that opens under the button -->
           <div class="popover" id="popover" hidden>
@@ -62,7 +70,7 @@
       <ul>
         <li>Hover on: button presses down slightly</li>
         <li>Hover off: button goes back up</li>
-        <li>Click: button presses all the way down and a popover opens under it</li>
+        <li>Click: button presses all the way down, comes back up, and a popover opens under it</li>
       </ul>
       <h3>Popover START button</h3>
       <ul>
@@ -90,8 +98,8 @@
       </ul>
       <h3>Modes</h3>
       <ul>
-        <li>Popover open: START tag is hidden; clicking anywhere else closes the popover</li>
-        <li>Popover closed: button goes back up and the START tag returns</li>
+        <li>Popover open: START tag is hidden; the button can still be hovered and clicked</li>
+        <li>Popover closed: clicking the button again or anywhere else closes it and the START tag returns</li>
       </ul>
     </section>
 

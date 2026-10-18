@@ -52,7 +52,7 @@ main { padding-top: 20px; padding-bottom: 20px; }
 .box--demo {
   display: flex;
   justify-content: center;   /* centered horizontally */
-  min-height: 380px;
+  min-height: 400px;
   padding-top: 30px;
 }
 
@@ -72,16 +72,45 @@ main { padding-top: 20px; padding-bottom: 20px; }
 }
 .dot:nth-child(1) { transform: translateX(-36px); }
 .dot:nth-child(2) { transform: translateX(-22px); }
-.dot:nth-child(3) { transform: translateX(-8px); margin-bottom: 52px; }
+.dot:nth-child(3) { transform: translateX(-8px); margin-bottom: 30px; }
 
-/* wraps the tag, button and popover so they line up */
+/* wraps the tag, ring and popover so they line up */
 .lesson { position: relative; }
 
+/* ----- progress ring around the button ----- */
+.ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+}
+.ring-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);          /* progress starts at the top */
+}
+.ring-svg circle {
+  fill: none;
+  stroke-width: 8;
+}
+.ring-track    { stroke: #E5E5E5; }
+.ring-progress {
+  stroke: #58CC02;
+  stroke-linecap: round;
+  stroke-dasharray: 25 100;           /* 25% done; change 25 to show more */
+}
+
 /* ----- floating START tag ----- */
+/* sits so its point almost touches the top of the button
+   at the bottom of the float */
 .tag {
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 14px);
+  bottom: 96px;
+  z-index: 2;
   padding: 4px 12px;
   background: #fff;
   border: 2px solid #E5E5E5;
@@ -108,35 +137,43 @@ main { padding-top: 20px; padding-bottom: 20px; }
 }
 
 @keyframes float {
-  from { transform: translate(-50%, 0); }
-  to   { transform: translate(-50%, -7px); }
+  from { transform: translate(-50%, 0); }      /* bottom of the float */
+  to   { transform: translate(-50%, -7px); }   /* top of the float */
 }
 
 /* ----- lesson button ----- */
 .lesson-btn {
+  position: relative;
   display: grid;
   place-items: center;
   width: 72px;
   height: 64px;
+  margin-top: -8px;                   /* centers button + bottom edge in the ring */
   padding: 0;
   border: none;
   border-radius: 50%;
   background: #58CC02;
-  box-shadow: 0 8px 0 #58A700;          /* thick bottom edge */
+  box-shadow: 0 8px 0 #58A700;        /* thick bottom edge */
   cursor: pointer;
   transition: transform .1s, box-shadow .1s;
 }
-.lesson-btn svg { width: 30px; height: 30px; fill: #fff; }
+.lesson-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  stroke: #fff;                       /* stroke + round joins = rounded star points */
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
 
-/* hover on: presses down slightly */
+/* hover on: presses down slightly (works with the popover open too) */
 .lesson-btn:hover {
   transform: translateY(3px);
   box-shadow: 0 5px 0 #58A700;
 }
 
-/* click: presses all the way down and stays there while open */
-.lesson-btn:active,
-.lesson.is-open .lesson-btn {
+/* click: presses all the way down, then comes back up when released */
+.lesson-btn:active {
   transform: translateY(8px);
   box-shadow: 0 0 0 #58A700;
 }
@@ -153,7 +190,7 @@ main { padding-top: 20px; padding-bottom: 20px; }
 .popover {
   position: absolute;
   left: 50%;
-  top: calc(100% + 26px);
+  top: calc(100% + 10px);
   width: 230px;
   padding: 14px;
   background: #58CC02;
