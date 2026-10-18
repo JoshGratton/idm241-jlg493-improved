@@ -77,7 +77,7 @@ main { padding-top: 20px; padding-bottom: 20px; }
 /* wraps the tag, ring and popover so they line up */
 .lesson { position: relative; }
 
-/* ----- progress ring around the button ----- */
+/* ----- gray ring around the button ----- */
 .ring {
   position: relative;
   display: grid;
@@ -90,26 +90,19 @@ main { padding-top: 20px; padding-bottom: 20px; }
   inset: 0;
   width: 100%;
   height: 100%;
-  transform: rotate(-90deg);          /* progress starts at the top */
 }
 .ring-svg circle {
   fill: none;
   stroke-width: 8;
 }
-.ring-track    { stroke: #E5E5E5; }
-.ring-progress {
-  stroke: #58CC02;
-  stroke-linecap: round;
-  stroke-dasharray: 25 100;           /* 25% done; change 25 to show more */
-}
+.ring-track { stroke: #E5E5E5; }
 
 /* ----- floating START tag ----- */
-/* sits so its point almost touches the top of the button
-   at the bottom of the float */
+/* sits low, overlapping the ring, with its point near the button */
 .tag {
   position: absolute;
   left: 50%;
-  bottom: 96px;
+  bottom: 84px;
   z-index: 2;
   padding: 4px 12px;
   background: #fff;
@@ -197,7 +190,8 @@ main { padding-top: 20px; padding-bottom: 20px; }
   border-radius: 14px;
   color: #fff;
   transform: translateX(-50%);
-  animation: pop-in .2s ease-out;
+  transform-origin: 50% 0;            /* grows out from the arrow at the top */
+  animation: pop-in .25s cubic-bezier(.3, 1.4, .5, 1);
 }
 .popover[hidden] { display: none; }
 
@@ -213,9 +207,10 @@ main { padding-top: 20px; padding-bottom: 20px; }
   transform: translateX(-50%) rotate(45deg);
 }
 
+/* grows from nothing to full size */
 @keyframes pop-in {
-  from { opacity: 0; transform: translateX(-50%) scale(.9); }
-  to   { opacity: 1; transform: translateX(-50%) scale(1); }
+  from { transform: translateX(-50%) scale(0); }
+  to   { transform: translateX(-50%) scale(1); }
 }
 
 .pop-title { margin: 0; font-size: 16px; font-weight: 800; line-height: 22px; }
