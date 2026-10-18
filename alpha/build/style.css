@@ -96,17 +96,18 @@ main { padding-top: 20px; padding-bottom: 20px; }
   left: 50%;
   bottom: 84px;
   z-index: 2;
-  padding: 4px 12px;
+  padding: 7px 14px;
   background: #fff;
   border: 2px solid #E5E5E5;
-  border-radius: 10px;
-  color: #58CC02;
-  font-size: 14px;
+  border-radius: 12px;
+  color: #1CB0F6;                     /* unit color (blue) */
+  font-size: 16px;
   font-weight: 800;
+  letter-spacing: .03em;
   white-space: nowrap;
   transform: translateX(-50%);
   animation: float 1s ease-in-out infinite alternate;
-  transition: opacity .15s;
+  /* hides instantly on click, like Duolingo */
 }
 .tag::after {
   content: "";
@@ -137,8 +138,8 @@ main { padding-top: 20px; padding-bottom: 20px; }
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: #58CC02;
-  box-shadow: 0 8px 0 #58A700;        /* thick bottom edge */
+  background: #1CB0F6;
+  box-shadow: 0 8px 0 #1899D6;        /* thick bottom edge */
   cursor: pointer;
   transition: transform .1s, box-shadow .1s;
 }
@@ -154,13 +155,13 @@ main { padding-top: 20px; padding-bottom: 20px; }
 /* hover on: presses down slightly (works with the popover open too) */
 .lesson-btn:hover {
   transform: translateY(3px);
-  box-shadow: 0 5px 0 #58A700;
+  box-shadow: 0 5px 0 #1899D6;
 }
 
 /* click: presses all the way down, then comes back up when released */
 .lesson-btn:active {
   transform: translateY(8px);
-  box-shadow: 0 0 0 #58A700;
+  box-shadow: 0 0 0 #1899D6;
 }
 
 .lesson-btn:focus-visible {
@@ -176,10 +177,10 @@ main { padding-top: 20px; padding-bottom: 20px; }
   position: absolute;
   left: 50%;
   top: calc(100% + 10px);
-  width: 230px;
-  padding: 14px;
-  background: #58CC02;
-  border-radius: 14px;
+  width: 260px;
+  padding: 16px;
+  background: #1CB0F6;
+  border-radius: 16px;
   color: #fff;
   transform: translateX(-50%);
   transform-origin: 50% 0;            /* grows out from the arrow at the top */
@@ -194,7 +195,7 @@ main { padding-top: 20px; padding-bottom: 20px; }
   top: -7px;
   width: 16px;
   height: 16px;
-  background: #58CC02;
+  background: #1CB0F6;
   border-radius: 3px;
   transform: translateX(-50%) rotate(45deg);
 }
@@ -205,8 +206,8 @@ main { padding-top: 20px; padding-bottom: 20px; }
   to   { transform: translateX(-50%) scale(1); }
 }
 
-.pop-title { margin: 0; font-size: 16px; font-weight: 800; line-height: 22px; }
-.pop-sub   { margin: 0 0 10px; font-size: 14px; line-height: 20px; }
+.pop-title { margin: 0; font-size: 17px; font-weight: 800; line-height: 24px; }
+.pop-sub   { margin: 0 0 12px; font-size: 15px; line-height: 20px; }
 
 .pop-btn {
   display: block;
@@ -216,7 +217,7 @@ main { padding-top: 20px; padding-bottom: 20px; }
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 4px 0 rgba(0, 0, 0, .15);
-  color: #58CC02;
+  color: #1CB0F6;
   font-family: inherit;
   font-size: 14px;
   font-weight: 800;
@@ -225,7 +226,7 @@ main { padding-top: 20px; padding-bottom: 20px; }
 }
 
 /* hover on: text changes color */
-.pop-btn:hover { color: #1CB0F6; }
+.pop-btn:hover { color: #0A6E9E; }  /* darker blue */
 
 /* ===== Footer ===== */
 .footer {
