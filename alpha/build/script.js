@@ -35,7 +35,3 @@ popover.addEventListener('click', function (event) {
 // Clicking anywhere else on the page closes it
 document.addEventListener('click', closePopover);
 
-// Escape key also closes it
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape') closePopover();
-});
