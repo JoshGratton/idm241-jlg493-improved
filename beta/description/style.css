@@ -1,0 +1,195 @@
+/* ===== Colors ===== */
+:root {
+  --black: #111111;
+  --dark-gray: #3E3E3E;
+  --gray: #757575;
+  --light-gray: #CACACB;
+  --bg-gray: #F5F5F5;
+  --red: #D30005;
+  --white: #FFFFFF;
+}
+
+/* ===== Basics ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black);
+  background: var(--white);
+}
+
+h1, h2, h3 { margin: 0 0 12px; line-height: 1.2; }
+h2 { font-size: 20px; font-weight: 700; }
+h3 { font-size: 16px; font-weight: 700; margin-top: 16px; }
+p  { margin: 0 0 12px; }
+ul { margin: 0; padding-left: 20px; }
+li { margin-bottom: 6px; }
+a  { color: var(--black); }
+
+/* Everything lines up in one centered column */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Header ===== */
+.header {
+  background: var(--black);
+  color: var(--white);
+  padding: 28px 0;
+}
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+}
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+/* ===== Boxes ===== */
+main.wrap { padding-top: 24px; padding-bottom: 20px; }
+
+.box {
+  border: 1.5px solid var(--black);
+  border-radius: 24px;
+  padding: 24px 30px;
+  margin-bottom: 18px;
+}
+.box > :last-child { margin-bottom: 0; }
+
+/* ===== Visuals ===== */
+.frames {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+.frame { margin: 0; }
+.frame figcaption { margin-top: 8px; font-size: 14px; }
+
+.stage {
+  position: relative;
+  border: 1.5px solid var(--black);
+  border-radius: 18px;
+  padding: 18px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+/* ----- mini Nike product panel ----- */
+.pdp-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.pdp-name { font-size: 15px; font-weight: 700; }
+
+.bag {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+}
+.bag svg { width: 26px; height: 26px; }
+.bag-count {
+  position: absolute;
+  top: 12px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.bag--pop { transform: scale(1.2); }          /* grows 20% */
+
+.pdp-label { margin: 0 0 8px; font-size: 14px; font-weight: 600; }
+.pdp-error { margin: 0 0 8px; font-size: 13px; color: var(--red); }
+
+/* size grid */
+.sizes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 4px;
+  margin: 0 -4px 14px;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+}
+.sizes--error { border-color: var(--red); }   /* red flash */
+
+.size {
+  position: relative;
+  display: block;
+  padding: 8px 0;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: center;
+  background: var(--white);
+}
+.size--hover    { border-color: var(--black); }
+.size--selected { background: var(--black); border-color: var(--black); color: var(--white); }
+.size--soldout  { background: var(--bg-gray); color: var(--light-gray); text-decoration: line-through; }
+
+/* Add to Bag */
+.atb {
+  position: relative;
+  display: block;
+  padding: 14px;
+  border-radius: 999px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  overflow: visible;
+}
+.atb-label { position: relative; z-index: 1; }
+
+.atb--shake { transform: translateX(-6px); box-shadow: 6px 0 0 -2px var(--light-gray), 12px 0 0 -4px #E5E5E5; }
+
+/* lighter gray bar filling left to right */
+.atb--filling { background: linear-gradient(90deg, var(--gray) 0 50%, var(--black) 50% 100%); }
+.atb--filled  { background: var(--gray); }
+
+/* shoe thumbnail mid-flight */
+.flyer {
+  position: absolute;
+  right: 46px;
+  top: 62px;
+  width: 56px;
+  height: 28px;
+  transform: rotate(-12deg);
+}
+.flyer svg { width: 100%; height: 100%; }
+
+/* cursors */
+.cur-wrap { position: absolute; z-index: 5; width: 22px; height: 28px; }
+.cur { width: 100%; height: 100%; }
+.cur-wrap--idle { right: 40px; top: 60px; }
+.cur-wrap--size { left: 55%; top: 40%; }
+.cur-wrap--atb  { left: 62%; top: 45%; }
+
+/* ===== Footer ===== */
+.footer {
+  padding-top: 8px;
+  padding-bottom: 40px;
+  font-size: 14px;
+}
+
+/* ===== Phones ===== */
+@media (max-width: 560px) {
+  .wrap { padding: 0 16px; }
+  .header h1 { font-size: 22px; }
+  .box { padding: 20px; border-radius: 20px; }
+}

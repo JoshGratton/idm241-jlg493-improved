@@ -1,1 +1,283 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike Add to Bag Microinteraction | Beta Description</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <p class="eyebrow">Beta Description</p>
+      <h1>Nike Add to Bag Microinteraction</h1>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 1. original interface -->
+    <section class="box">
+      <h2>1. Original Interface</h2>
+      <ul>
+        <li><a href="https://www.nike.com/t/air-force-1-07-mens-shoes-jBrhbr/CW2288-111" target="_blank" rel="noopener">https://www.nike.com/t/air-force-1-07-mens-shoes-jBrhbr/CW2288-111</a></li>
+        <li>Improving: the size buttons, the Add to Bag button and the Bag icon on a Nike shoe page</li>
+      </ul>
+      <h3>Why it&rsquo;s an improvement</h3>
+      <ul>
+        <li>When a user forgets to pick a size, Nike shows a small red &ldquo;Please select a size&rdquo; message that&rsquo;s easy to miss. The new version shakes the button and highlights the size grid so the user knows exactly where to look.</li>
+        <li>When a shoe is added, Nike shows a popup that covers the page. The new version shows the shoe flying into the Bag icon, so the user gets confirmation and can keep shopping.</li>
+      </ul>
+    </section>
+
+    <!-- 2. triggers -->
+    <section class="box">
+      <h2>2. Triggers</h2>
+      <h3>Size buttons</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>Add to Bag button</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>Bag icon</h3>
+      <ul>
+        <li>Shoe thumbnail lands on the icon</li>
+      </ul>
+    </section>
+
+    <!-- 3. rules -->
+    <section class="box">
+      <h2>3. Rules</h2>
+      <h3>Size buttons</h3>
+      <ul>
+        <li>Hover on: cursor changes to a glove and the size button&rsquo;s border changes from light gray to black</li>
+        <li>Hover off: glove changes to a cursor and the border changes back to light gray</li>
+        <li>Click: the size button fills black and its text turns white; any other selected size goes back to white; the Add to Bag text changes from &ldquo;Add to Bag&rdquo; to &ldquo;Add to Bag &ndash; M 10&rdquo;; if the &ldquo;Please select a size&rdquo; message is showing, it disappears</li>
+        <li>Sold-out size: the button is light gray with a line through the size, the cursor does not change to a glove, and clicking it does nothing</li>
+      </ul>
+      <h3>Add to Bag button</h3>
+      <ul>
+        <li>Hover on: cursor changes to a glove and the button changes from black to dark gray</li>
+        <li>Hover off: glove changes to a cursor and the button changes back to black</li>
+        <li>Click with no size selected: the button shakes left and right 6 pixels, 3 times, over 0.4 seconds; the size grid&rsquo;s border flashes red once; &ldquo;Please select a size&rdquo; appears in red above the size grid</li>
+        <li>Click with a size selected: a lighter gray bar fills the button from left to right over 0.6 seconds and the text changes to &ldquo;Adding&hellip;&rdquo;; the shoe is saved to the user&rsquo;s bag; a small shoe thumbnail arcs from the button up to the Bag icon over 0.6 seconds; the button text changes to &ldquo;&check; Added&rdquo; for 2 seconds, then changes back to &ldquo;Add to Bag &ndash; M 10&rdquo;</li>
+        <li>While &ldquo;Adding&hellip;&rdquo; or &ldquo;&check; Added&rdquo; is showing: clicking the button does nothing</li>
+      </ul>
+      <h3>Bag icon</h3>
+      <ul>
+        <li>When the shoe thumbnail lands: the Bag icon grows 20% and shrinks back over 0.3 seconds, and the number on the icon goes up by 1</li>
+        <li>The bag count is saved, so it is still there after the page is refreshed</li>
+      </ul>
+    </section>
+
+    <!-- 4. feedback -->
+    <section class="box">
+      <h2>4. Feedback</h2>
+      <h3>Size buttons</h3>
+      <ul>
+        <li>Hover on: cursor changes to a glove and the size button&rsquo;s border changes from light gray to black</li>
+        <li>Hover off: glove changes to a cursor and the border changes back to light gray</li>
+        <li>Click: the size button fills black and its text turns white; any other selected size goes back to white; the Add to Bag text changes from &ldquo;Add to Bag&rdquo; to &ldquo;Add to Bag &ndash; M 10&rdquo;; if the &ldquo;Please select a size&rdquo; message is showing, it disappears</li>
+        <li>Sold-out size: the button is light gray with a line through the size, the cursor does not change to a glove, and clicking it does nothing</li>
+      </ul>
+      <h3>Add to Bag button</h3>
+      <ul>
+        <li>Hover on: cursor changes to a glove and the button changes from black to dark gray</li>
+        <li>Hover off: glove changes to a cursor and the button changes back to black</li>
+        <li>Click with no size selected: the button shakes left and right 6 pixels, 3 times, over 0.4 seconds; the size grid&rsquo;s border flashes red once; &ldquo;Please select a size&rdquo; appears in red above the size grid</li>
+        <li>Click with a size selected: a lighter gray bar fills the button from left to right over 0.6 seconds and the text changes to &ldquo;Adding&hellip;&rdquo;; a small shoe thumbnail arcs from the button up to the Bag icon over 0.6 seconds; the button text changes to &ldquo;&check; Added&rdquo; for 2 seconds, then changes back to &ldquo;Add to Bag &ndash; M 10&rdquo;</li>
+        <li>While &ldquo;Adding&hellip;&rdquo; or &ldquo;&check; Added&rdquo; is showing: clicking the button does nothing</li>
+      </ul>
+      <h3>Bag icon</h3>
+      <ul>
+        <li>When the shoe thumbnail lands: the Bag icon grows 20% and shrinks back over 0.3 seconds, and the number on the icon goes up by 1</li>
+      </ul>
+    </section>
+
+    <!-- 5. loops & modes -->
+    <section class="box">
+      <h2>5. Loops &amp; Modes</h2>
+      <h3>Loops</h3>
+      <ul>
+        <li>Each time Add to Bag is clicked with a size selected, the full sequence plays again (fill, fly, grow, &ldquo;&check; Added&rdquo;) and the bag number goes up by 1 each time</li>
+        <li>Each time Add to Bag is clicked with no size selected, the shake and red flash play again</li>
+      </ul>
+      <h3>Modes</h3>
+      <ul>
+        <li>No size selected: clicking Add to Bag shows the error instead of adding the shoe</li>
+        <li>Size selected: clicking Add to Bag adds the shoe</li>
+        <li>Adding: Add to Bag can&rsquo;t be clicked until &ldquo;&check; Added&rdquo; changes back</li>
+      </ul>
+    </section>
+
+    <!-- 6. visuals -->
+    <section class="box">
+      <h2>6. Visuals</h2>
+      <p>Each frame shows one state, with the cursor where the mouse would be.</p>
+      <div class="frames">
+
+        <!-- Idle -->
+        <figure class="frame">
+          <div class="stage">
+            <div class="pdp">
+              <div class="pdp-top">
+                <span class="pdp-name">Air Force 1 &rsquo;07</span>
+                <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
+              </div>
+              <p class="pdp-label">Select Size</p>
+              
+              <div class="sizes">
+                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size">M 10</span><span class="size">M 10.5</span>
+              </div>
+              <span class="atb "><span class="atb-label">Add to Bag</span></span>
+            </div>
+            
+            <span class="cur-wrap cur-wrap--idle"><svg class="cur" viewBox="0 0 22 28"><path d="M2 2v21l5.5-5 3.6 8.2 3.6-1.6-3.5-8.1H18z" fill="#000" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+          </div>
+          <figcaption><strong>1. Idle:</strong> no size is selected and the cursor is off to the side.</figcaption>
+        </figure>
+
+        <!-- Hover on size -->
+        <figure class="frame">
+          <div class="stage">
+            <div class="pdp">
+              <div class="pdp-top">
+                <span class="pdp-name">Air Force 1 &rsquo;07</span>
+                <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
+              </div>
+              <p class="pdp-label">Select Size</p>
+              
+              <div class="sizes">
+                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--hover">M 10<span class="cur-wrap cur-wrap--size"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="size">M 10.5</span>
+              </div>
+              <span class="atb "><span class="atb-label">Add to Bag</span></span>
+            </div>
+            
+            
+          </div>
+          <figcaption><strong>2. Hover on size:</strong> the glove is on M 10 and its border turns black.</figcaption>
+        </figure>
+
+        <!-- Size clicked -->
+        <figure class="frame">
+          <div class="stage">
+            <div class="pdp">
+              <div class="pdp-top">
+                <span class="pdp-name">Air Force 1 &rsquo;07</span>
+                <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
+              </div>
+              <p class="pdp-label">Select Size</p>
+              
+              <div class="sizes">
+                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--selected">M 10<span class="cur-wrap cur-wrap--size"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="size">M 10.5</span>
+              </div>
+              <span class="atb "><span class="atb-label">Add to Bag &ndash; M 10</span></span>
+            </div>
+            
+            
+          </div>
+          <figcaption><strong>3. Size clicked:</strong> M 10 fills black and the button reads &ldquo;Add to Bag &ndash; M 10&rdquo;.</figcaption>
+        </figure>
+
+        <!-- Click with no size -->
+        <figure class="frame">
+          <div class="stage">
+            <div class="pdp">
+              <div class="pdp-top">
+                <span class="pdp-name">Air Force 1 &rsquo;07</span>
+                <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
+              </div>
+              <p class="pdp-label">Select Size</p>
+              <p class="pdp-error">Please select a size</p>
+              <div class="sizes sizes--error">
+                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size">M 10</span><span class="size">M 10.5</span>
+              </div>
+              <span class="atb atb--shake"><span class="atb-label">Add to Bag</span><span class="cur-wrap cur-wrap--atb"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+            </div>
+            
+            
+          </div>
+          <figcaption><strong>4. Click with no size:</strong> the button shakes, the size grid border flashes red and the message appears.</figcaption>
+        </figure>
+
+        <!-- Click with a size -->
+        <figure class="frame">
+          <div class="stage">
+            <div class="pdp">
+              <div class="pdp-top">
+                <span class="pdp-name">Air Force 1 &rsquo;07</span>
+                <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
+              </div>
+              <p class="pdp-label">Select Size</p>
+              
+              <div class="sizes">
+                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--selected">M 10</span><span class="size">M 10.5</span>
+              </div>
+              <span class="atb atb--filling"><span class="atb-label">Adding&hellip;</span><span class="cur-wrap cur-wrap--atb"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+            </div>
+            
+            
+          </div>
+          <figcaption><strong>5. Click with a size:</strong> a lighter gray bar fills the button and the text reads &ldquo;Adding&hellip;&rdquo;.</figcaption>
+        </figure>
+
+        <!-- Shoe flies to bag -->
+        <figure class="frame">
+          <div class="stage">
+            <div class="pdp">
+              <div class="pdp-top">
+                <span class="pdp-name">Air Force 1 &rsquo;07</span>
+                <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
+              </div>
+              <p class="pdp-label">Select Size</p>
+              
+              <div class="sizes">
+                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--selected">M 10</span><span class="size">M 10.5</span>
+              </div>
+              <span class="atb atb--filled"><span class="atb-label">Adding&hellip;</span><span class="cur-wrap cur-wrap--atb"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+            </div>
+            <span class="flyer"><svg viewBox="0 0 48 24" aria-hidden="true"><path d="M4 19V12q1-4 5-4l5 1 4-2 6 3 10 2q10 1 11 5v2z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 16.5h41" stroke="#111" stroke-width="1.2"/><path d="M16 10l3 4M20 9l3 4" stroke="#111" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+            
+          </div>
+          <figcaption><strong>6. Shoe flies to bag:</strong> the shoe thumbnail arcs from the button up to the Bag icon.</figcaption>
+        </figure>
+
+        <!-- Added -->
+        <figure class="frame">
+          <div class="stage">
+            <div class="pdp">
+              <div class="pdp-top">
+                <span class="pdp-name">Air Force 1 &rsquo;07</span>
+                <span class="bag bag--pop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">1</span></span>
+              </div>
+              <p class="pdp-label">Select Size</p>
+              
+              <div class="sizes">
+                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--selected">M 10</span><span class="size">M 10.5</span>
+              </div>
+              <span class="atb "><span class="atb-label">&check; Added</span><span class="cur-wrap cur-wrap--atb"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+            </div>
+            
+            
+          </div>
+          <figcaption><strong>7. Added:</strong> the Bag icon grows, the number changes to 1 and the button reads &ldquo;&check; Added&rdquo;.</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer">
+    <p>Microinteractions &middot; Project for Microinteractions by Joshua Gratton.</p>
+  </footer>
+
+</body>
+</html>
