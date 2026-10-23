@@ -22,12 +22,21 @@
       <h2>1. Original Interface</h2>
       <ul>
         <li><a href="https://www.nike.com/t/air-force-1-07-mens-shoes-jBrhbr/CW2288-111" target="_blank" rel="noopener">https://www.nike.com/t/air-force-1-07-mens-shoes-jBrhbr/CW2288-111</a></li>
-        <li>Improving: the size buttons, the Add to Bag button and the Bag icon on a Nike shoe page</li>
+        <li>Improving: the size buttons, the Add to Bag button, a new View Bag link and the Bag icon on a Nike shoe page</li>
+      </ul>
+      <h3>What Nike does now</h3>
+      <ul>
+        <li>Hovering a size or selecting a size both give it a black border, so the hovered size and the selected size look the same</li>
+        <li>The Add to Bag text never changes, so it doesn&rsquo;t show which size is being added</li>
+        <li>Clicking Add to Bag with no size: &ldquo;Select Size&rdquo; turns red, the size grid gets a red outline and &ldquo;Please select a size.&rdquo; appears under the grid; nothing moves</li>
+        <li>Clicking Add to Bag with a size: the page dims and an &ldquo;Added to Bag&rdquo; panel covers the top right corner until the user closes it</li>
       </ul>
       <h3>Why it&rsquo;s an improvement</h3>
       <ul>
-        <li>When a user forgets to pick a size, Nike shows a small red &ldquo;Please select a size&rdquo; message that&rsquo;s easy to miss. The new version shakes the button and highlights the size grid so the user knows exactly where to look.</li>
-        <li>When a shoe is added, Nike shows a popup that covers the page. The new version shows the shoe flying into the Bag icon, so the user gets confirmation and can keep shopping.</li>
+        <li>The selected size fills black, so it&rsquo;s easy to tell apart from a hovered size</li>
+        <li>The Add to Bag text shows the chosen size, so the user can check it before adding</li>
+        <li>The button shakes when no size is picked, so the error is noticed right away</li>
+        <li>The shoe flies into the Bag icon instead of a panel covering the page, so the user sees where it went and can keep shopping; a View Bag link still gives a quick way to the bag</li>
       </ul>
     </section>
 
@@ -46,6 +55,12 @@
         <li>Hover off</li>
         <li>Click</li>
       </ul>
+      <h3>View Bag link</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
       <h3>Bag icon</h3>
       <ul>
         <li>Shoe thumbnail lands on the icon</li>
@@ -59,16 +74,22 @@
       <ul>
         <li>Hover on: cursor changes to a glove and the size button&rsquo;s border changes from light gray to black</li>
         <li>Hover off: glove changes to a cursor and the border changes back to light gray</li>
-        <li>Click: the size button fills black and its text turns white; any other selected size goes back to white; the Add to Bag text changes from &ldquo;Add to Bag&rdquo; to &ldquo;Add to Bag &ndash; M 10&rdquo;; if the &ldquo;Please select a size&rdquo; message is showing, it disappears</li>
+        <li>Click: the size button fills black over 0.2 seconds and its text turns white; any other selected size goes back to white; the Add to Bag text changes from &ldquo;Add to Bag&rdquo; to &ldquo;Add to Bag &ndash; M 10&rdquo;; if the error is showing, &ldquo;Select Size&rdquo; turns back to black, the red outline goes away and &ldquo;Please select a size.&rdquo; disappears</li>
         <li>Sold-out size: the button is light gray with a line through the size, the cursor does not change to a glove, and clicking it does nothing</li>
       </ul>
       <h3>Add to Bag button</h3>
       <ul>
-        <li>Hover on: cursor changes to a glove and the button changes from black to dark gray</li>
+        <li>Hover on: cursor changes to a glove and the button changes from black to gray</li>
         <li>Hover off: glove changes to a cursor and the button changes back to black</li>
-        <li>Click with no size selected: the button shakes left and right 6 pixels, 3 times, over 0.4 seconds; the size grid&rsquo;s border flashes red once; &ldquo;Please select a size&rdquo; appears in red above the size grid</li>
-        <li>Click with a size selected: a lighter gray bar fills the button from left to right over 0.6 seconds and the text changes to &ldquo;Adding&hellip;&rdquo;; the shoe is saved to the user&rsquo;s bag; a small shoe thumbnail arcs from the button up to the Bag icon over 0.6 seconds; the button text changes to &ldquo;&check; Added&rdquo; for 2 seconds, then changes back to &ldquo;Add to Bag &ndash; M 10&rdquo;</li>
+        <li>Click with no size selected: the button shakes left and right 6 pixels, 3 times, over 0.4 seconds; &ldquo;Select Size&rdquo; turns red; the size grid&rsquo;s outline flashes red once, then stays red; &ldquo;Please select a size.&rdquo; appears in red under the size grid</li>
+        <li>Click with a size selected: a lighter gray bar fills the button from left to right over 0.6 seconds and the text changes to &ldquo;Adding&hellip;&rdquo;; the shoe is saved to the user&rsquo;s bag; a small shoe thumbnail arcs from the button up to the Bag icon over 0.6 seconds; the button text changes to &ldquo;&check; Added&rdquo; and a View Bag link appears under the button for 2 seconds, then the button changes back to &ldquo;Add to Bag &ndash; M 10&rdquo; and the link disappears</li>
         <li>While &ldquo;Adding&hellip;&rdquo; or &ldquo;&check; Added&rdquo; is showing: clicking the button does nothing</li>
+      </ul>
+      <h3>View Bag link</h3>
+      <ul>
+        <li>Hover on: cursor changes to a glove and the link&rsquo;s underline disappears</li>
+        <li>Hover off: glove changes to a cursor and the underline comes back</li>
+        <li>Click: the Bag page opens</li>
       </ul>
       <h3>Bag icon</h3>
       <ul>
@@ -84,16 +105,22 @@
       <ul>
         <li>Hover on: cursor changes to a glove and the size button&rsquo;s border changes from light gray to black</li>
         <li>Hover off: glove changes to a cursor and the border changes back to light gray</li>
-        <li>Click: the size button fills black and its text turns white; any other selected size goes back to white; the Add to Bag text changes from &ldquo;Add to Bag&rdquo; to &ldquo;Add to Bag &ndash; M 10&rdquo;; if the &ldquo;Please select a size&rdquo; message is showing, it disappears</li>
+        <li>Click: the size button fills black over 0.2 seconds and its text turns white; any other selected size goes back to white; the Add to Bag text changes from &ldquo;Add to Bag&rdquo; to &ldquo;Add to Bag &ndash; M 10&rdquo;; if the error is showing, &ldquo;Select Size&rdquo; turns back to black, the red outline goes away and &ldquo;Please select a size.&rdquo; disappears</li>
         <li>Sold-out size: the button is light gray with a line through the size, the cursor does not change to a glove, and clicking it does nothing</li>
       </ul>
       <h3>Add to Bag button</h3>
       <ul>
-        <li>Hover on: cursor changes to a glove and the button changes from black to dark gray</li>
+        <li>Hover on: cursor changes to a glove and the button changes from black to gray</li>
         <li>Hover off: glove changes to a cursor and the button changes back to black</li>
-        <li>Click with no size selected: the button shakes left and right 6 pixels, 3 times, over 0.4 seconds; the size grid&rsquo;s border flashes red once; &ldquo;Please select a size&rdquo; appears in red above the size grid</li>
-        <li>Click with a size selected: a lighter gray bar fills the button from left to right over 0.6 seconds and the text changes to &ldquo;Adding&hellip;&rdquo;; a small shoe thumbnail arcs from the button up to the Bag icon over 0.6 seconds; the button text changes to &ldquo;&check; Added&rdquo; for 2 seconds, then changes back to &ldquo;Add to Bag &ndash; M 10&rdquo;</li>
+        <li>Click with no size selected: the button shakes left and right 6 pixels, 3 times, over 0.4 seconds; &ldquo;Select Size&rdquo; turns red; the size grid&rsquo;s outline flashes red once, then stays red; &ldquo;Please select a size.&rdquo; appears in red under the size grid</li>
+        <li>Click with a size selected: a lighter gray bar fills the button from left to right over 0.6 seconds and the text changes to &ldquo;Adding&hellip;&rdquo;; a small shoe thumbnail arcs from the button up to the Bag icon over 0.6 seconds; the button text changes to &ldquo;&check; Added&rdquo; and a View Bag link appears under the button for 2 seconds, then the button changes back to &ldquo;Add to Bag &ndash; M 10&rdquo; and the link disappears</li>
         <li>While &ldquo;Adding&hellip;&rdquo; or &ldquo;&check; Added&rdquo; is showing: clicking the button does nothing</li>
+      </ul>
+      <h3>View Bag link</h3>
+      <ul>
+        <li>Hover on: cursor changes to a glove and the link&rsquo;s underline disappears</li>
+        <li>Hover off: glove changes to a cursor and the underline comes back</li>
+        <li>Click: the Bag page opens</li>
       </ul>
       <h3>Bag icon</h3>
       <ul>
@@ -132,11 +159,12 @@
                 <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
               </div>
               <p class="pdp-label">Select Size</p>
-              
               <div class="sizes">
-                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size">M 10</span><span class="size">M 10.5</span>
+                <span class="size">M 8 / W 9.5</span><span class="size">M 8.5 / W 10</span><span class="size">M 9 / W 10.5</span><span class="size size--soldout">M 9.5 / W 11</span><span class="size">M 10 / W 11.5</span><span class="size">M 10.5 / W 12</span>
               </div>
+              
               <span class="atb "><span class="atb-label">Add to Bag</span></span>
+              
             </div>
             
             <span class="cur-wrap cur-wrap--idle"><svg class="cur" viewBox="0 0 22 28"><path d="M2 2v21l5.5-5 3.6 8.2 3.6-1.6-3.5-8.1H18z" fill="#000" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
@@ -153,16 +181,17 @@
                 <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
               </div>
               <p class="pdp-label">Select Size</p>
-              
               <div class="sizes">
-                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--hover">M 10<span class="cur-wrap cur-wrap--size"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="size">M 10.5</span>
+                <span class="size">M 8 / W 9.5</span><span class="size">M 8.5 / W 10</span><span class="size">M 9 / W 10.5</span><span class="size size--soldout">M 9.5 / W 11</span><span class="size size--hover">M 10 / W 11.5<span class="cur-wrap cur-wrap--size"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="size">M 10.5 / W 12</span>
               </div>
+              
               <span class="atb "><span class="atb-label">Add to Bag</span></span>
+              
             </div>
             
             
           </div>
-          <figcaption><strong>2. Hover on size:</strong> the glove is on M 10 and its border turns black.</figcaption>
+          <figcaption><strong>2. Hover on size:</strong> the glove is on M 10 / W 11.5 and its border turns black.</figcaption>
         </figure>
 
         <!-- Size clicked -->
@@ -174,16 +203,17 @@
                 <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
               </div>
               <p class="pdp-label">Select Size</p>
-              
               <div class="sizes">
-                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--selected">M 10<span class="cur-wrap cur-wrap--size"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="size">M 10.5</span>
+                <span class="size">M 8 / W 9.5</span><span class="size">M 8.5 / W 10</span><span class="size">M 9 / W 10.5</span><span class="size size--soldout">M 9.5 / W 11</span><span class="size size--selected">M 10 / W 11.5<span class="cur-wrap cur-wrap--size"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="size">M 10.5 / W 12</span>
               </div>
+              
               <span class="atb "><span class="atb-label">Add to Bag &ndash; M 10</span></span>
+              
             </div>
             
             
           </div>
-          <figcaption><strong>3. Size clicked:</strong> M 10 fills black and the button reads &ldquo;Add to Bag &ndash; M 10&rdquo;.</figcaption>
+          <figcaption><strong>3. Size clicked:</strong> M 10 / W 11.5 fills black and the button reads &ldquo;Add to Bag &ndash; M 10&rdquo;.</figcaption>
         </figure>
 
         <!-- Click with no size -->
@@ -194,17 +224,18 @@
                 <span class="pdp-name">Air Force 1 &rsquo;07</span>
                 <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
               </div>
-              <p class="pdp-label">Select Size</p>
-              <p class="pdp-error">Please select a size</p>
+              <p class="pdp-label pdp-label--error">Select Size</p>
               <div class="sizes sizes--error">
-                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size">M 10</span><span class="size">M 10.5</span>
+                <span class="size">M 8 / W 9.5</span><span class="size">M 8.5 / W 10</span><span class="size">M 9 / W 10.5</span><span class="size size--soldout">M 9.5 / W 11</span><span class="size">M 10 / W 11.5</span><span class="size">M 10.5 / W 12</span>
               </div>
+              <p class="pdp-error">Please select a size.</p>
               <span class="atb atb--shake"><span class="atb-label">Add to Bag</span><span class="cur-wrap cur-wrap--atb"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+              
             </div>
             
             
           </div>
-          <figcaption><strong>4. Click with no size:</strong> the button shakes, the size grid border flashes red and the message appears.</figcaption>
+          <figcaption><strong>4. Click with no size:</strong> the button shakes, &ldquo;Select Size&rdquo; turns red, the size grid outline flashes red and the message appears under the grid.</figcaption>
         </figure>
 
         <!-- Click with a size -->
@@ -216,11 +247,12 @@
                 <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
               </div>
               <p class="pdp-label">Select Size</p>
-              
               <div class="sizes">
-                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--selected">M 10</span><span class="size">M 10.5</span>
+                <span class="size">M 8 / W 9.5</span><span class="size">M 8.5 / W 10</span><span class="size">M 9 / W 10.5</span><span class="size size--soldout">M 9.5 / W 11</span><span class="size size--selected">M 10 / W 11.5</span><span class="size">M 10.5 / W 12</span>
               </div>
+              
               <span class="atb atb--filling"><span class="atb-label">Adding&hellip;</span><span class="cur-wrap cur-wrap--atb"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+              
             </div>
             
             
@@ -237,11 +269,12 @@
                 <span class="bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">0</span></span>
               </div>
               <p class="pdp-label">Select Size</p>
-              
               <div class="sizes">
-                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--selected">M 10</span><span class="size">M 10.5</span>
+                <span class="size">M 8 / W 9.5</span><span class="size">M 8.5 / W 10</span><span class="size">M 9 / W 10.5</span><span class="size size--soldout">M 9.5 / W 11</span><span class="size size--selected">M 10 / W 11.5</span><span class="size">M 10.5 / W 12</span>
               </div>
+              
               <span class="atb atb--filled"><span class="atb-label">Adding&hellip;</span><span class="cur-wrap cur-wrap--atb"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+              
             </div>
             <span class="flyer"><svg viewBox="0 0 48 24" aria-hidden="true"><path d="M4 19V12q1-4 5-4l5 1 4-2 6 3 10 2q10 1 11 5v2z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 16.5h41" stroke="#111" stroke-width="1.2"/><path d="M16 10l3 4M20 9l3 4" stroke="#111" stroke-width="1.2" stroke-linecap="round"/></svg></span>
             
@@ -258,16 +291,17 @@
                 <span class="bag bag--pop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg><span class="bag-count">1</span></span>
               </div>
               <p class="pdp-label">Select Size</p>
-              
               <div class="sizes">
-                <span class="size">M 8</span><span class="size">M 8.5</span><span class="size">M 9</span><span class="size size--soldout">M 9.5</span><span class="size size--selected">M 10</span><span class="size">M 10.5</span>
+                <span class="size">M 8 / W 9.5</span><span class="size">M 8.5 / W 10</span><span class="size">M 9 / W 10.5</span><span class="size size--soldout">M 9.5 / W 11</span><span class="size size--selected">M 10 / W 11.5</span><span class="size">M 10.5 / W 12</span>
               </div>
+              
               <span class="atb "><span class="atb-label">&check; Added</span><span class="cur-wrap cur-wrap--atb"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+              <span class="view-bag">View Bag</span>
             </div>
             
             
           </div>
-          <figcaption><strong>7. Added:</strong> the Bag icon grows, the number changes to 1 and the button reads &ldquo;&check; Added&rdquo;.</figcaption>
+          <figcaption><strong>7. Added:</strong> the Bag icon grows, the number changes to 1, the button reads &ldquo;&check; Added&rdquo; and a View Bag link appears under it.</figcaption>
         </figure>
 
       </div>
