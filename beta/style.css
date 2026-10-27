@@ -204,3 +204,7 @@ main.wrap { padding-top: 24px; padding-bottom: 20px; }
   .header h1 { font-size: 22px; }
   .box { padding: 20px; border-radius: 20px; }
 }
+
+/* sub-bullets in Rules and Feedback */
+li > ul { margin-top: 6px; }
+li > ul > li { margin-bottom: 4px; }
