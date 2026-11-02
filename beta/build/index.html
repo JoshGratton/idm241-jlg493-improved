@@ -1,1 +1,290 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike Add to Bag Microinteraction | Beta Build</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <p class="eyebrow">Beta Build</p>
+      <h1>Nike Add to Bag Microinteraction</h1>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- the working microinteraction -->
+    <section class="box box--demo">
+      <div class="pdp" id="pdp">
+
+        <!-- product name, price and Bag icon -->
+        <div class="pdp-top">
+          <div>
+            <p class="pdp-name">Nike Air Force 1 &rsquo;07</p>
+            <p class="pdp-price">$115</p>
+          </div>
+          <span class="bag" id="bag" aria-label="Bag">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="#111" stroke-width="1.6"/></svg>
+            <span class="bag-count" id="bagCount">0</span>
+          </span>
+        </div>
+
+        <!-- shoe size buttons -->
+        <p class="pdp-label" id="sizeLabel">Select Size</p>
+        <div class="sizes" id="sizes">
+          <button class="size" type="button" data-short="M 8">M 8 / W 9.5</button>
+          <button class="size" type="button" data-short="M 8.5">M 8.5 / W 10</button>
+          <button class="size" type="button" data-short="M 9">M 9 / W 10.5</button>
+          <button class="size" type="button" disabled>M 9.5 / W 11</button>
+          <button class="size" type="button" data-short="M 10">M 10 / W 11.5</button>
+          <button class="size" type="button" data-short="M 10.5">M 10.5 / W 12</button>
+        </div>
+        <p class="pdp-error" id="sizeError" hidden>Please select a size.</p>
+
+        <!-- "Add to Bag" button -->
+        <button class="atb" id="atb" type="button">
+          <span class="atb-label" id="atbLabel">Add to Bag</span>
+        </button>
+
+        <!-- "View Bag" link (shows for 2 seconds after adding) -->
+        <a class="view-bag" id="viewBag" href="https://www.nike.com/cart" target="_blank" rel="noopener">View Bag</a>
+
+      </div>
+    </section>
+
+    <!-- triggers -->
+    <section class="box">
+      <h2>Triggers</h2>
+      <h3>Shoe size buttons</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>&ldquo;Add to Bag&rdquo; button</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>&ldquo;View Bag&rdquo; link</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+    </section>
+
+    <!-- rules -->
+    <section class="box">
+      <h2>Rules</h2>
+      <h3>Shoe size buttons</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The shoe size button&rsquo;s border fades from light gray to black</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The border fades back to light gray</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The shoe size button fades from white to black over 0.2 seconds and its text turns white</li>
+            <li>Any other selected shoe size button fades back to white</li>
+            <li>The &ldquo;Add to Bag&rdquo; button text changes from &ldquo;Add to Bag&rdquo; to &ldquo;Add to Bag &ndash; M 10&rdquo;</li>
+            <li>If the error is showing, &ldquo;Select Size&rdquo; turns back to black, the red outline fades away and &ldquo;Please select a size.&rdquo; disappears</li>
+          </ul>
+        </li>
+        <li>Sold-out shoe size button:
+          <ul>
+            <li>The button is light gray with a line through the size</li>
+            <li>The cursor does not change to a glove</li>
+            <li>Clicking it does nothing</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>&ldquo;Add to Bag&rdquo; button</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The button fades from black to gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The button fades from gray back to black over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click with no shoe size selected:
+          <ul>
+            <li>The shoe cannot be added until a shoe size is selected</li>
+            <li>The button shakes left and right 6 pixels, 3 times, over 0.4 seconds</li>
+            <li>&ldquo;Select Size&rdquo; turns red</li>
+            <li>A red outline flashes once around the shoe size buttons, then stays red</li>
+            <li>&ldquo;Please select a size.&rdquo; appears in red under the shoe size buttons</li>
+          </ul>
+        </li>
+        <li>Click with a shoe size selected:
+          <ul>
+            <li>A lighter gray bar fills the button from left to right over 0.6 seconds and the text changes to &ldquo;Adding&hellip;&rdquo;</li>
+            <li>The shoe is added to the user&rsquo;s bag in the database, and the new bag count is saved</li>
+            <li>A small shoe thumbnail arcs from the button up to the Bag icon over 0.6 seconds</li>
+            <li>When the shoe thumbnail lands, the Bag icon grows 20% and shrinks back over 0.3 seconds, and the number on the Bag icon goes up by 1</li>
+            <li>The button text changes to &ldquo;&check; Added&rdquo; and the &ldquo;View Bag&rdquo; link appears under the button</li>
+            <li>After 2 seconds, the button text changes back to &ldquo;Add to Bag &ndash; M 10&rdquo; and the &ldquo;View Bag&rdquo; link disappears</li>
+          </ul>
+        </li>
+        <li>While &ldquo;Adding&hellip;&rdquo; or &ldquo;&check; Added&rdquo; is showing:
+          <ul>
+            <li>Clicking the button does nothing</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>&ldquo;View Bag&rdquo; link</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The link&rsquo;s underline disappears</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The underline comes back</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The Bag page opens</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- feedback -->
+    <section class="box">
+      <h2>Feedback</h2>
+      <h3>Shoe size buttons</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The shoe size button&rsquo;s border fades from light gray to black</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The border fades back to light gray</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The shoe size button fades from white to black over 0.2 seconds and its text turns white</li>
+            <li>Any other selected shoe size button fades back to white</li>
+            <li>The &ldquo;Add to Bag&rdquo; button text changes from &ldquo;Add to Bag&rdquo; to &ldquo;Add to Bag &ndash; M 10&rdquo;</li>
+            <li>If the error is showing, &ldquo;Select Size&rdquo; turns back to black, the red outline fades away and &ldquo;Please select a size.&rdquo; disappears</li>
+          </ul>
+        </li>
+        <li>Sold-out shoe size button:
+          <ul>
+            <li>The button is light gray with a line through the size</li>
+            <li>The cursor does not change to a glove</li>
+            <li>Clicking it does nothing</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>&ldquo;Add to Bag&rdquo; button</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The button fades from black to gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The button fades from gray back to black over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click with no shoe size selected:
+          <ul>
+            <li>The shoe cannot be added until a shoe size is selected</li>
+            <li>The button shakes left and right 6 pixels, 3 times, over 0.4 seconds</li>
+            <li>&ldquo;Select Size&rdquo; turns red</li>
+            <li>A red outline flashes once around the shoe size buttons, then stays red</li>
+            <li>&ldquo;Please select a size.&rdquo; appears in red under the shoe size buttons</li>
+          </ul>
+        </li>
+        <li>Click with a shoe size selected:
+          <ul>
+            <li>A lighter gray bar fills the button from left to right over 0.6 seconds and the text changes to &ldquo;Adding&hellip;&rdquo;</li>
+            <li>A small shoe thumbnail arcs from the button up to the Bag icon over 0.6 seconds</li>
+            <li>When the shoe thumbnail lands, the Bag icon grows 20% and shrinks back over 0.3 seconds, and the number on the Bag icon goes up by 1</li>
+            <li>The button text changes to &ldquo;&check; Added&rdquo; and the &ldquo;View Bag&rdquo; link appears under the button</li>
+            <li>After 2 seconds, the button text changes back to &ldquo;Add to Bag &ndash; M 10&rdquo; and the &ldquo;View Bag&rdquo; link disappears</li>
+          </ul>
+        </li>
+        <li>While &ldquo;Adding&hellip;&rdquo; or &ldquo;&check; Added&rdquo; is showing:
+          <ul>
+            <li>Clicking the button does nothing</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>&ldquo;View Bag&rdquo; link</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The link&rsquo;s underline disappears</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The underline comes back</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The Bag page opens</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- loops & modes -->
+    <section class="box">
+      <h2>Loops &amp; Modes</h2>
+      <h3>Loops</h3>
+      <ul>
+        <li>None</li>
+      </ul>
+      <h3>Modes</h3>
+      <ul>
+        <li>None</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer">
+    <p>Microinteractions &middot; Project for Microinteractions by Joshua Gratton.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
