@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple iPhone Feature Panel Microinteraction | Final Description</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <p class="eyebrow">Final Description</p>
+      <h1>Apple iPhone Feature Panel Microinteraction</h1>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 1. original interface -->
+    <section class="box">
+      <h2>1. Original Interface</h2>
+      <ul>
+        <li><a href="https://www.apple.com/iphone-18-pro/" target="_blank" rel="noopener">https://www.apple.com/iphone-18-pro/</a></li>
+        <li>Improving: the feature pills, the up and down arrow buttons, the color dots and the Close (&times;) button in the iPhone 18 Pro &ldquo;Take a closer look&rdquo; panel, plus a new Play/Pause button and a new &ldquo;Take a closer look&rdquo; button</li>
+      </ul>
+      <h3>What Apple does now</h3>
+      <ul>
+        <li>Clicking a feature pill grows it into a card with a description, the image changes to match, and the card that was open shrinks back into a feature pill</li>
+        <li>Once a card is open, its + disappears, so there is no clear way to close the card</li>
+        <li>The up and down arrow buttons step through the features, and the up arrow button is dimmed when the first feature is open</li>
+        <li>Nothing shows how many features there are or which number is open</li>
+        <li>Features only change when the user clicks</li>
+      </ul>
+      <h3>Why it&rsquo;s an improvement</h3>
+      <ul>
+        <li>Autoplay steps through every feature with a progress bar, so the user sees all 7 features without clicking 7 times</li>
+        <li>The + rotates into a &times; on the open card, so it&rsquo;s clear how to close the card and see the full phone</li>
+        <li>A counter (&ldquo;2 of 7&rdquo;) shows where the user is</li>
+        <li>The Play/Pause button keeps the user in control of autoplay</li>
+        <li>The &ldquo;Take a closer look&rdquo; button reopens the panel on the last open feature and chosen color, so the user picks up where they left off</li>
+      </ul>
+    </section>
+
+    <!-- 2. triggers -->
+    <section class="box">
+      <h2>2. Triggers</h2>
+      <h3>Feature pills</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>Up and down arrow buttons</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>Color dots</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>Play/Pause button</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>Close (&times;) button</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+      <h3>&ldquo;Take a closer look&rdquo; button</h3>
+      <ul>
+        <li>Hover on</li>
+        <li>Hover off</li>
+        <li>Click</li>
+      </ul>
+    </section>
+
+    <!-- 3. rules -->
+    <section class="box">
+      <h2>3. Rules</h2>
+      <h3>Feature pills</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The feature pill&rsquo;s background fades from dark gray to a lighter gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The background fades back to dark gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click a closed feature pill:
+          <ul>
+            <li>The open card shrinks back into a feature pill over 0.4 seconds and its &times; rotates back into a +</li>
+            <li>The clicked feature pill grows into a card over 0.4 seconds</li>
+            <li>Its + rotates 45&deg; into a &times; over 0.3 seconds</li>
+            <li>The description text fades in over 0.3 seconds after the card finishes growing</li>
+            <li>The image fades out and the new feature&rsquo;s image fades in, zooming from 105% to 100% over 0.5 seconds</li>
+            <li>The counter changes to that feature&rsquo;s number, for example from &ldquo;1 of 7&rdquo; to &ldquo;2 of 7&rdquo;</li>
+            <li>Only one card can be open at a time</li>
+            <li>The open feature is saved to the database</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+        <li>Click the &times; on the open card:
+          <ul>
+            <li>The card shrinks back into a feature pill over 0.4 seconds and its &times; rotates back into a +</li>
+            <li>The description text fades out</li>
+            <li>The image fades back to the full phone over 0.5 seconds</li>
+            <li>The counter fades out</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Up and down arrow buttons</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The arrow fades from gray to white over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The arrow fades back to gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click the down arrow button:
+          <ul>
+            <li>The next feature pill opens into a card, the same way as clicking a closed feature pill</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+        <li>Click the up arrow button:
+          <ul>
+            <li>The previous feature pill opens into a card, the same way as clicking a closed feature pill</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+        <li>When the first feature is open:
+          <ul>
+            <li>The user cannot go back before the first feature</li>
+            <li>The up arrow button fades to 30% opacity over 0.2 seconds</li>
+            <li>The cursor does not change to a glove on the up arrow button</li>
+            <li>Clicking the up arrow button does nothing</li>
+          </ul>
+        </li>
+        <li>When the last feature is open:
+          <ul>
+            <li>The user cannot go past the last feature</li>
+            <li>The down arrow button fades to 30% opacity over 0.2 seconds</li>
+            <li>The cursor does not change to a glove on the down arrow button</li>
+            <li>Clicking the down arrow button does nothing</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Color dots</h3>
+      <ul>
+        <li>Only shown when the Colors card is open:
+          <ul>
+            <li>The color dots appear under the Colors description</li>
+          </ul>
+        </li>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>A thin white ring fades in around the color dot over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The ring fades away over 0.2 seconds, unless that color dot is selected</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The white ring moves to the clicked color dot</li>
+            <li>The phone image fades to the new color over 0.4 seconds</li>
+            <li>The color name changes, for example from &ldquo;Shown in Burgundy&rdquo; to &ldquo;Shown in Silver&rdquo;</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+            <li>The chosen color is saved to the database</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Play/Pause button</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The button&rsquo;s background fades from dark gray to a lighter gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The background fades back to dark gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click while playing (&#10074;&#10074;):
+          <ul>
+            <li>Autoplay stops</li>
+            <li>The progress bar on the open card stops where it is</li>
+            <li>The icon changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+        <li>Click while paused (&#9654;):
+          <ul>
+            <li>Autoplay starts again</li>
+            <li>The progress bar keeps filling from where it stopped</li>
+            <li>The icon changes from &#9654; to &#10074;&#10074;</li>
+            <li>If no card is open, the first feature pill opens into a card</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Close (&times;) button</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The button&rsquo;s background fades from dark gray to a lighter gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The background fades back to dark gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The panel fades out and shrinks to 95% over 0.3 seconds</li>
+            <li>Autoplay stops</li>
+            <li>The &ldquo;Take a closer look&rdquo; button fades in where the panel was</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>&ldquo;Take a closer look&rdquo; button</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The button fades from blue to a darker blue over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The button fades back to blue over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The button fades out over 0.2 seconds</li>
+            <li>The panel fades in and grows from 95% to 100% over 0.3 seconds</li>
+            <li>The last open feature and chosen color are loaded from the database</li>
+            <li>The panel opens on the last open feature, with the phone shown in the chosen color</li>
+            <li>Autoplay starts and the Play/Pause button shows &#10074;&#10074;</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. feedback -->
+    <section class="box">
+      <h2>4. Feedback</h2>
+      <h3>Feature pills</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The feature pill&rsquo;s background fades from dark gray to a lighter gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The background fades back to dark gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click a closed feature pill:
+          <ul>
+            <li>The open card shrinks back into a feature pill over 0.4 seconds and its &times; rotates back into a +</li>
+            <li>The clicked feature pill grows into a card over 0.4 seconds</li>
+            <li>Its + rotates 45&deg; into a &times; over 0.3 seconds</li>
+            <li>The description text fades in over 0.3 seconds after the card finishes growing</li>
+            <li>The image fades out and the new feature&rsquo;s image fades in, zooming from 105% to 100% over 0.5 seconds</li>
+            <li>The counter changes to that feature&rsquo;s number, for example from &ldquo;1 of 7&rdquo; to &ldquo;2 of 7&rdquo;</li>
+            <li>Only one card can be open at a time</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+        <li>Click the &times; on the open card:
+          <ul>
+            <li>The card shrinks back into a feature pill over 0.4 seconds and its &times; rotates back into a +</li>
+            <li>The description text fades out</li>
+            <li>The image fades back to the full phone over 0.5 seconds</li>
+            <li>The counter fades out</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Up and down arrow buttons</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The arrow fades from gray to white over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The arrow fades back to gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click the down arrow button:
+          <ul>
+            <li>The next feature pill opens into a card, the same way as clicking a closed feature pill</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+        <li>Click the up arrow button:
+          <ul>
+            <li>The previous feature pill opens into a card, the same way as clicking a closed feature pill</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+        <li>When the first feature is open:
+          <ul>
+            <li>The user cannot go back before the first feature</li>
+            <li>The up arrow button fades to 30% opacity over 0.2 seconds</li>
+            <li>The cursor does not change to a glove on the up arrow button</li>
+            <li>Clicking the up arrow button does nothing</li>
+          </ul>
+        </li>
+        <li>When the last feature is open:
+          <ul>
+            <li>The user cannot go past the last feature</li>
+            <li>The down arrow button fades to 30% opacity over 0.2 seconds</li>
+            <li>The cursor does not change to a glove on the down arrow button</li>
+            <li>Clicking the down arrow button does nothing</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Color dots</h3>
+      <ul>
+        <li>Only shown when the Colors card is open:
+          <ul>
+            <li>The color dots appear under the Colors description</li>
+          </ul>
+        </li>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>A thin white ring fades in around the color dot over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The ring fades away over 0.2 seconds, unless that color dot is selected</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The white ring moves to the clicked color dot</li>
+            <li>The phone image fades to the new color over 0.4 seconds</li>
+            <li>The color name changes, for example from &ldquo;Shown in Burgundy&rdquo; to &ldquo;Shown in Silver&rdquo;</li>
+            <li>Autoplay stops and the Play/Pause button changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Play/Pause button</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The button&rsquo;s background fades from dark gray to a lighter gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The background fades back to dark gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click while playing (&#10074;&#10074;):
+          <ul>
+            <li>Autoplay stops</li>
+            <li>The progress bar on the open card stops where it is</li>
+            <li>The icon changes from &#10074;&#10074; to &#9654;</li>
+          </ul>
+        </li>
+        <li>Click while paused (&#9654;):
+          <ul>
+            <li>Autoplay starts again</li>
+            <li>The progress bar keeps filling from where it stopped</li>
+            <li>The icon changes from &#9654; to &#10074;&#10074;</li>
+            <li>If no card is open, the first feature pill opens into a card</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Close (&times;) button</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The button&rsquo;s background fades from dark gray to a lighter gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The background fades back to dark gray over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The panel fades out and shrinks to 95% over 0.3 seconds</li>
+            <li>Autoplay stops</li>
+            <li>The &ldquo;Take a closer look&rdquo; button fades in where the panel was</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>&ldquo;Take a closer look&rdquo; button</h3>
+      <ul>
+        <li>Hover on:
+          <ul>
+            <li>Cursor changes to a glove</li>
+            <li>The button fades from blue to a darker blue over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Hover off:
+          <ul>
+            <li>Glove changes back to a cursor</li>
+            <li>The button fades back to blue over 0.2 seconds</li>
+          </ul>
+        </li>
+        <li>Click:
+          <ul>
+            <li>The button fades out over 0.2 seconds</li>
+            <li>The panel fades in and grows from 95% to 100% over 0.3 seconds</li>
+            <li>The panel opens on the last open feature, with the phone shown in the chosen color</li>
+            <li>Autoplay starts and the Play/Pause button shows &#10074;&#10074;</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 5. loops & modes -->
+    <section class="box">
+      <h2>5. Loops &amp; Modes</h2>
+      <h3>Loops</h3>
+      <ul>
+        <li>While autoplay is on, a white progress bar fills along the bottom of the open card over 5 seconds, then the next feature pill opens into a card and the progress bar starts again</li>
+        <li>After the last feature, autoplay goes back to the first feature and keeps repeating until the user clicks a feature pill, an arrow button, a color dot, the Play/Pause button or the Close (&times;) button</li>
+      </ul>
+      <h3>Modes</h3>
+      <ul>
+        <li>Autoplay mode (default when the panel opens):
+          <ul>
+            <li>Features change on their own every 5 seconds</li>
+            <li>The progress bar shows on the open card</li>
+            <li>The Play/Pause button shows &#10074;&#10074;</li>
+          </ul>
+        </li>
+        <li>Manual mode (after clicking a feature pill, an arrow button, a color dot or Pause):
+          <ul>
+            <li>Features only change when the user clicks</li>
+            <li>The progress bar is hidden</li>
+            <li>The Play/Pause button shows &#9654;</li>
+          </ul>
+        </li>
+        <li>Colors mode (while the Colors card is open):
+          <ul>
+            <li>The color dots appear under the Colors description</li>
+            <li>In every other card, the color dots are hidden</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 6. visuals -->
+    <section class="box">
+      <h2>6. Visuals</h2>
+      <p>Each frame shows one state, with the cursor where the mouse would be.</p>
+      <div class="frames">
+
+        <!-- Autoplay -->
+        <figure class="frame">
+          <div class="stage">
+            <span class="x-btn">&times;</span>
+            <span class="nav"><span class="arrow arrow--dim">&#9650;</span><span class="count">1 of 7</span><span class="arrow">&#9660;</span></span>
+            <span class="pills"><span class="card"><span class="card-x">&times;</span><span class="card-text"><b>Colors.</b> Four finishes with color-matched back glass. Shown in Burgundy.</span><span class="dots"><span class="dot dot--sel" style="background:#6B2A36"></span><span class="dot" style="background:#C9CACD"></span><span class="dot" style="background:#3A4A63"></span><span class="dot" style="background:#2B2B2D"></span></span><span class="prog"><span style="width:50%"></span></span></span><span class="pill"><span class="plus">+</span>Two sizes</span><span class="pill"><span class="plus">+</span>New Main camera</span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img"><svg viewBox="0 0 120 200" aria-hidden="true"><rect x="14" y="6" width="92" height="188" rx="18" fill="#6B2A36" stroke="#555" stroke-width="1.5"/><rect x="22" y="14" width="52" height="56" rx="12" fill="rgba(0,0,0,.25)"/><circle cx="36" cy="28" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="58" cy="40" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="36" cy="54" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="66" cy="22" r="3" fill="#eee"/></svg></span></span>
+            <span class="pp">&#10074;&#10074;</span>
+            <span class="cur-wrap cur-wrap--shot"><svg class="cur" viewBox="0 0 22 28"><path d="M2 2v21l5.5-5 3.6 8.2 3.6-1.6-3.5-8.1H18z" fill="#000" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+          </div>
+          <figcaption><strong>1. Autoplay:</strong> the Colors card is open, the progress bar is halfway full, the counter reads &ldquo;1 of 7&rdquo; and the cursor is off to the side.</figcaption>
+        </figure>
+
+        <!-- Hover on a feature pill -->
+        <figure class="frame">
+          <div class="stage">
+            <span class="x-btn">&times;</span>
+            <span class="nav"><span class="arrow arrow--dim">&#9650;</span><span class="count">1 of 7</span><span class="arrow">&#9660;</span></span>
+            <span class="pills"><span class="card"><span class="card-x">&times;</span><span class="card-text"><b>Colors.</b> Four finishes with color-matched back glass. Shown in Burgundy.</span><span class="dots"><span class="dot dot--sel" style="background:#6B2A36"></span><span class="dot" style="background:#C9CACD"></span><span class="dot" style="background:#3A4A63"></span><span class="dot" style="background:#2B2B2D"></span></span><span class="prog"><span style="width:70%"></span></span></span><span class="pill pill--hover"><span class="plus">+</span>Two sizes<span class="cur-wrap cur-wrap--pill"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="pill"><span class="plus">+</span>New Main camera</span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img"><svg viewBox="0 0 120 200" aria-hidden="true"><rect x="14" y="6" width="92" height="188" rx="18" fill="#6B2A36" stroke="#555" stroke-width="1.5"/><rect x="22" y="14" width="52" height="56" rx="12" fill="rgba(0,0,0,.25)"/><circle cx="36" cy="28" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="58" cy="40" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="36" cy="54" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="66" cy="22" r="3" fill="#eee"/></svg></span></span>
+            <span class="pp">&#10074;&#10074;</span>
+            
+          </div>
+          <figcaption><strong>2. Hover on a feature pill:</strong> the glove is on the &ldquo;Two sizes&rdquo; feature pill and its background fades to a lighter gray.</figcaption>
+        </figure>
+
+        <!-- Click a feature pill -->
+        <figure class="frame">
+          <div class="stage">
+            <span class="x-btn">&times;</span>
+            <span class="nav"><span class="arrow">&#9650;</span><span class="count">2 of 7</span><span class="arrow">&#9660;</span></span>
+            <span class="pills"><span class="pill"><span class="plus">+</span>Colors</span><span class="card card--growing"><span class="card-x card-x--turning">+</span><span class="card-text"><b>Two sizes.</b> A 6.3-inch and a 6.9-inch display.</span></span><span class="pill"><span class="plus">+</span>New Main camera</span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img shot-img--out"><svg viewBox="0 0 120 200" aria-hidden="true"><rect x="14" y="6" width="92" height="188" rx="18" fill="#6B2A36" stroke="#555" stroke-width="1.5"/><rect x="22" y="14" width="52" height="56" rx="12" fill="rgba(0,0,0,.25)"/><circle cx="36" cy="28" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="58" cy="40" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="36" cy="54" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="66" cy="22" r="3" fill="#eee"/></svg></span><span class="shot-img shot-img--in"><svg viewBox="0 0 140 200" aria-hidden="true"><rect x="6" y="20" width="62" height="170" rx="14" fill="#2a2a2c" stroke="#777" stroke-width="1.5"/><rect x="11" y="25" width="52" height="160" rx="10" fill="#3d3d40"/><rect x="28" y="30" width="18" height="5" rx="2.5" fill="#000"/><rect x="78" y="40" width="56" height="150" rx="13" fill="#2a2a2c" stroke="#777" stroke-width="1.5"/><rect x="83" y="45" width="46" height="140" rx="9" fill="#3d3d40"/><rect x="98" y="50" width="16" height="5" rx="2.5" fill="#000"/></svg></span></span>
+            <span class="pp">&#9654;</span>
+            <span class="cur-wrap cur-wrap--shot"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+          </div>
+          <figcaption><strong>3. Click a feature pill:</strong> the Colors card shrinks back into a feature pill while &ldquo;Two sizes&rdquo; grows into a card, its + rotates into a &times; and the image fades to the next one.</figcaption>
+        </figure>
+
+        <!-- Card open -->
+        <figure class="frame">
+          <div class="stage">
+            <span class="x-btn">&times;</span>
+            <span class="nav"><span class="arrow">&#9650;</span><span class="count">2 of 7</span><span class="arrow">&#9660;</span></span>
+            <span class="pills"><span class="pill"><span class="plus">+</span>Colors</span><span class="card"><span class="card-x">&times;</span><span class="card-text"><b>Two sizes.</b> A 6.3-inch and a 6.9-inch display.</span><span class="cur-wrap cur-wrap--card"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="pill"><span class="plus">+</span>New Main camera</span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img"><svg viewBox="0 0 140 200" aria-hidden="true"><rect x="6" y="20" width="62" height="170" rx="14" fill="#2a2a2c" stroke="#777" stroke-width="1.5"/><rect x="11" y="25" width="52" height="160" rx="10" fill="#3d3d40"/><rect x="28" y="30" width="18" height="5" rx="2.5" fill="#000"/><rect x="78" y="40" width="56" height="150" rx="13" fill="#2a2a2c" stroke="#777" stroke-width="1.5"/><rect x="83" y="45" width="46" height="140" rx="9" fill="#3d3d40"/><rect x="98" y="50" width="16" height="5" rx="2.5" fill="#000"/></svg></span></span>
+            <span class="pp">&#9654;</span>
+            
+          </div>
+          <figcaption><strong>4. Card open:</strong> &ldquo;Two sizes&rdquo; is open with a &times;, the counter reads &ldquo;2 of 7&rdquo; and the Play/Pause button shows &#9654;.</figcaption>
+        </figure>
+
+        <!-- Click a color dot -->
+        <figure class="frame">
+          <div class="stage">
+            <span class="x-btn">&times;</span>
+            <span class="nav"><span class="arrow arrow--dim">&#9650;</span><span class="count">1 of 7</span><span class="arrow">&#9660;</span></span>
+            <span class="pills"><span class="card"><span class="card-x">&times;</span><span class="card-text"><b>Colors.</b> Four finishes with color-matched back glass. Shown in Silver.</span><span class="dots"><span class="dot" style="background:#6B2A36"></span><span class="dot dot--sel dot--hover" style="background:#C9CACD"><span class="cur-wrap cur-wrap--dot"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span><span class="dot" style="background:#3A4A63"></span><span class="dot" style="background:#2B2B2D"></span></span></span><span class="pill"><span class="plus">+</span>Two sizes</span><span class="pill"><span class="plus">+</span>New Main camera</span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img"><svg viewBox="0 0 120 200" aria-hidden="true"><rect x="14" y="6" width="92" height="188" rx="18" fill="#C9CACD" stroke="#555" stroke-width="1.5"/><rect x="22" y="14" width="52" height="56" rx="12" fill="rgba(0,0,0,.25)"/><circle cx="36" cy="28" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="58" cy="40" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="36" cy="54" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="66" cy="22" r="3" fill="#eee"/></svg></span></span>
+            <span class="pp">&#9654;</span>
+            
+          </div>
+          <figcaption><strong>5. Click a color dot:</strong> the white ring moves to Silver, the phone fades to silver and the text changes to &ldquo;Shown in Silver&rdquo;.</figcaption>
+        </figure>
+
+        <!-- Click the down arrow button -->
+        <figure class="frame">
+          <div class="stage">
+            <span class="x-btn">&times;</span>
+            <span class="nav"><span class="arrow">&#9650;</span><span class="count">3 of 7</span><span class="arrow arrow--hover">&#9660;<span class="cur-wrap cur-wrap--arrow"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span></span>
+            <span class="pills"><span class="pill"><span class="plus">+</span>Colors</span><span class="pill"><span class="plus">+</span>Two sizes</span><span class="card"><span class="card-x">&times;</span><span class="card-text"><b>New Main camera.</b> A larger sensor for sharper, brighter photos.</span></span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img"><svg viewBox="0 0 140 200" aria-hidden="true"><circle cx="70" cy="100" r="58" fill="#1b1b1d" stroke="#8a8a8e" stroke-width="5"/><circle cx="70" cy="100" r="38" fill="#0c0c0e" stroke="#444" stroke-width="3"/><circle cx="70" cy="100" r="16" fill="#1f2a44"/><circle cx="62" cy="92" r="5" fill="rgba(255,255,255,.45)"/></svg></span></span>
+            <span class="pp">&#9654;</span>
+            
+          </div>
+          <figcaption><strong>6. Click the down arrow button:</strong> the next feature pill, &ldquo;New Main camera&rdquo;, opens into a card and the counter changes to &ldquo;3 of 7&rdquo;.</figcaption>
+        </figure>
+
+        <!-- First feature open -->
+        <figure class="frame">
+          <div class="stage">
+            <span class="x-btn">&times;</span>
+            <span class="nav"><span class="arrow arrow--dim">&#9650;<span class="cur-wrap cur-wrap--arrow"><svg class="cur" viewBox="0 0 22 28"><path d="M2 2v21l5.5-5 3.6 8.2 3.6-1.6-3.5-8.1H18z" fill="#000" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span></span><span class="count">1 of 7</span><span class="arrow">&#9660;</span></span>
+            <span class="pills"><span class="card"><span class="card-x">&times;</span><span class="card-text"><b>Colors.</b> Four finishes with color-matched back glass. Shown in Burgundy.</span><span class="dots"><span class="dot dot--sel" style="background:#6B2A36"></span><span class="dot" style="background:#C9CACD"></span><span class="dot" style="background:#3A4A63"></span><span class="dot" style="background:#2B2B2D"></span></span></span><span class="pill"><span class="plus">+</span>Two sizes</span><span class="pill"><span class="plus">+</span>New Main camera</span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img"><svg viewBox="0 0 120 200" aria-hidden="true"><rect x="14" y="6" width="92" height="188" rx="18" fill="#6B2A36" stroke="#555" stroke-width="1.5"/><rect x="22" y="14" width="52" height="56" rx="12" fill="rgba(0,0,0,.25)"/><circle cx="36" cy="28" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="58" cy="40" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="36" cy="54" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="66" cy="22" r="3" fill="#eee"/></svg></span></span>
+            <span class="pp">&#9654;</span>
+            
+          </div>
+          <figcaption><strong>7. First feature open:</strong> the up arrow button is faded to 30% and the cursor stays an arrow on it.</figcaption>
+        </figure>
+
+        <!-- Click Pause -->
+        <figure class="frame">
+          <div class="stage">
+            <span class="x-btn">&times;</span>
+            <span class="nav"><span class="arrow arrow--dim">&#9650;</span><span class="count">1 of 7</span><span class="arrow">&#9660;</span></span>
+            <span class="pills"><span class="card"><span class="card-x">&times;</span><span class="card-text"><b>Colors.</b> Four finishes with color-matched back glass. Shown in Burgundy.</span><span class="dots"><span class="dot dot--sel" style="background:#6B2A36"></span><span class="dot" style="background:#C9CACD"></span><span class="dot" style="background:#3A4A63"></span><span class="dot" style="background:#2B2B2D"></span></span><span class="prog"><span style="width:60%"></span></span></span><span class="pill"><span class="plus">+</span>Two sizes</span><span class="pill"><span class="plus">+</span>New Main camera</span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img"><svg viewBox="0 0 120 200" aria-hidden="true"><rect x="14" y="6" width="92" height="188" rx="18" fill="#6B2A36" stroke="#555" stroke-width="1.5"/><rect x="22" y="14" width="52" height="56" rx="12" fill="rgba(0,0,0,.25)"/><circle cx="36" cy="28" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="58" cy="40" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="36" cy="54" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="66" cy="22" r="3" fill="#eee"/></svg></span></span>
+            <span class="pp btn--hover">&#9654;<span class="cur-wrap cur-wrap--pp"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+            
+          </div>
+          <figcaption><strong>8. Click Pause:</strong> the icon changes to &#9654; and the progress bar stops where it is.</figcaption>
+        </figure>
+
+        <!-- Click the Close button -->
+        <figure class="frame">
+          <div class="stage stage--fading">
+            <span class="x-btn btn--hover">&times;<span class="cur-wrap cur-wrap--x"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+            <span class="nav"><span class="arrow arrow--dim">&#9650;</span><span class="count">1 of 7</span><span class="arrow">&#9660;</span></span>
+            <span class="pills"><span class="card"><span class="card-x">&times;</span><span class="card-text"><b>Colors.</b> Four finishes with color-matched back glass. Shown in Burgundy.</span><span class="dots"><span class="dot dot--sel" style="background:#6B2A36"></span><span class="dot" style="background:#C9CACD"></span><span class="dot" style="background:#3A4A63"></span><span class="dot" style="background:#2B2B2D"></span></span></span><span class="pill"><span class="plus">+</span>Two sizes</span><span class="pill"><span class="plus">+</span>New Main camera</span><span class="pill"><span class="plus">+</span>Dynamic Island</span><span class="pill"><span class="plus">+</span>Durability</span><span class="pill"><span class="plus">+</span>Camera Control</span><span class="pill"><span class="plus">+</span>Action button</span></span>
+            <span class="shot"><span class="shot-img"><svg viewBox="0 0 120 200" aria-hidden="true"><rect x="14" y="6" width="92" height="188" rx="18" fill="#6B2A36" stroke="#555" stroke-width="1.5"/><rect x="22" y="14" width="52" height="56" rx="12" fill="rgba(0,0,0,.25)"/><circle cx="36" cy="28" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="58" cy="40" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="36" cy="54" r="9" fill="#1b1b1d" stroke="#888" stroke-width="2"/><circle cx="66" cy="22" r="3" fill="#eee"/></svg></span></span>
+            <span class="pp">&#9654;</span>
+            
+          </div>
+          <figcaption><strong>9. Click the Close button:</strong> the panel fades out and shrinks to 95%.</figcaption>
+        </figure>
+
+        <!-- Hover on the &ldquo;Take a closer look&rdquo; button -->
+        <figure class="frame">
+          <div class="stage stage--closed">
+            <span class="tcl tcl--hover">Take a closer look<span class="cur-wrap cur-wrap--tcl"><svg class="cur" viewBox="0 0 24 28"><path d="M9 1.5a2 2 0 0 1 2 2V11h.6V9a2 2 0 0 1 4 0v2h.6v-.6a2 2 0 0 1 4 0V12a1.6 1.6 0 0 1 2.8 1v5.5c0 4.7-3.4 8-7.8 8h-2c-2.6 0-4.7-1.2-6.2-3.3l-4-5.8a1.9 1.9 0 0 1 3-2.3L7 17V3.5a2 2 0 0 1 2-2z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></span></span>
+          </div>
+          <figcaption><strong>10. Hover on the &ldquo;Take a closer look&rdquo; button:</strong> the button fades to a darker blue; clicking it reopens the panel on the last open feature.</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer">
+    <p>Microinteractions &middot; Project for Microinteractions by Joshua Gratton.</p>
+  </footer>
+
+</body>
+</html>
