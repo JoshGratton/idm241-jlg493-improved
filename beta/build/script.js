@@ -85,14 +85,13 @@ function addToBag() {
       bagCount.textContent = count;
       replay(bag, 'bag--pop');
 
-      // 4) "✓ Added" + "View Bag" link for 2 seconds
+      // 4) "✓ Added" for 2 seconds; "View Bag" link fades in and stays
       atb.classList.remove('atb--filling');
       atbLabel.textContent = '✓ Added';
-      viewBag.classList.add('view-bag--show');
+      viewBag.classList.add('view-bag--show');   // stays until the page is refreshed
 
       setTimeout(function () {
         atbLabel.textContent = 'Add to Bag – ' + selectedSize;
-        viewBag.classList.remove('view-bag--show');
         atb.classList.remove('atb--locked');
         locked = false;
       }, 2000);

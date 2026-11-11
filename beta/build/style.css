@@ -97,15 +97,19 @@ main.wrap { padding-top: 24px; padding-bottom: 20px; }
   position: relative;
   display: inline-grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
 }
-.bag svg { width: 30px; height: 30px; }
+.bag svg { width: 34px; height: 34px; }
 .bag-count {
   position: absolute;
-  top: 15px;
-  font-size: 11px;
+  left: 0;
+  right: 0;
+  top: 17px;                                /* centered in the body of the bag */
+  font-size: 10px;
   font-weight: 700;
+  line-height: 11px;
+  text-align: center;
 }
 
 /* Bag icon grows 20% and shrinks back over 0.3 seconds */
@@ -244,9 +248,11 @@ main.wrap { padding-top: 24px; padding-bottom: 20px; }
   font-size: 15px;
   font-weight: 600;
   text-decoration: underline;
+  opacity: 0;                               /* hidden until the first shoe is added */
   visibility: hidden;                       /* keeps its space so nothing jumps */
+  transition: opacity .3s, visibility .3s;  /* fades in over 0.3 seconds */
 }
-.view-bag--show { visibility: visible; }
+.view-bag--show { opacity: 1; visibility: visible; }  /* stays until refresh */
 .view-bag:hover { text-decoration: none; }  /* underline disappears */
 
 /* ----- shoe thumbnail that flies to the Bag icon ----- */
