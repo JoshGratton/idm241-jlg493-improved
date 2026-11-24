@@ -1,0 +1,442 @@
+/* ===== Colors ===== */
+:root {
+  --ink: #1D1D1F;            /* near-black text and header */
+  --gray-text: #6E6E73;
+  --border: #D2D2D7;
+  --bg-soft: #F5F5F7;
+  --blue: #0071E3;
+  --blue-dark: #0058B0;
+
+  /* panel colors */
+  --panel: #000000;
+  --pill: #333336;
+  --pill-hover: #4A4A4E;
+  --card: #262628;
+  --arrow-gray: #A1A1A6;
+
+  /* phone color (changed by the color dots) */
+  --phone: #6B2A36;
+}
+
+/* ===== Basics ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: #FFFFFF;
+}
+
+h1, h2, h3 { margin: 0 0 12px; line-height: 1.2; }
+h2 { font-size: 21px; font-weight: 700; }
+h3 { font-size: 16px; font-weight: 700; margin-top: 18px; }
+p  { margin: 0 0 12px; }
+ul { margin: 0; padding-left: 20px; }
+li { margin-bottom: 6px; }
+li > ul { margin-top: 6px; }
+li > ul > li { margin-bottom: 4px; }
+a  { color: var(--blue); }
+
+button { font-family: inherit; }
+
+/* Everything lines up in one centered column */
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.wrap--wide { max-width: 1000px; padding-top: 28px; }
+
+/* ===== Header ===== */
+.header {
+  background: var(--ink);
+  color: #FFFFFF;
+  padding: 30px 0;
+}
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #A1A1A6;
+}
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+/* ===== Boxes ===== */
+.box {
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 26px 30px;
+  margin-bottom: 18px;
+  background: #FFFFFF;
+}
+.box > :last-child { margin-bottom: 0; }
+
+/* =========================================================
+   THE MICROINTERACTION
+   ========================================================= */
+.demo {
+  position: relative;
+  display: flex;
+  justify-content: center;          /* centered horizontally */
+  min-height: 580px;
+}
+
+.panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  width: 100%;
+  min-height: 580px;
+  padding: 56px 28px 28px 70px;
+  border-radius: 28px;
+  background: var(--panel);
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+/* panel fades out and shrinks to 95% over 0.3 seconds */
+.panel--closing { animation: panel-out .3s ease forwards; }
+@keyframes panel-out {
+  to { opacity: 0; transform: scale(.95); }
+}
+/* panel fades in and grows from 95% to 100% over 0.3 seconds */
+.panel--opening { animation: panel-in .3s ease; }
+@keyframes panel-in {
+  from { opacity: 0; transform: scale(.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ----- shared round icon buttons (close, arrows, play/pause) ----- */
+.close-btn,
+.arrow,
+.pp-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--pill);
+  color: #FFFFFF;
+  cursor: pointer;                              /* glove */
+  transition: background-color .2s, color .2s, opacity .2s;
+}
+
+/* ----- Close (x) button ----- */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+.close-btn:hover { background: var(--pill-hover); }   /* fades lighter */
+.close-btn::before,
+.close-btn::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: #FFFFFF;
+}
+.close-btn::before { transform: rotate(45deg); }
+.close-btn::after  { transform: rotate(-45deg); }
+
+/* ----- up and down arrow buttons + counter ----- */
+.nav {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+.arrow { color: var(--arrow-gray); }
+.arrow:hover:not(:disabled) { color: #FFFFFF; }       /* fades gray -> white */
+.arrow::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+.arrow--up::before   { transform: translateY(2px) rotate(45deg); }
+.arrow--down::before { transform: translateY(-2px) rotate(-135deg); }
+
+/* first/last feature: fades to 30%, no glove, does nothing */
+.arrow:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+.counter {
+  font-size: 12px;
+  color: var(--arrow-gray);
+  white-space: nowrap;
+  transition: opacity .3s;
+}
+.counter--hidden { opacity: 0; }
+
+/* ----- feature pills / cards ----- */
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* pills shrink to fit their text */
+  gap: 10px;
+  align-self: center;
+  z-index: 1;
+}
+
+.feature {
+  position: relative;
+  border-radius: 24px;
+  background: var(--pill);
+  overflow: hidden;
+  transition: background-color .2s;
+}
+.feature:not(.feature--open):hover { background: var(--pill-hover); }  /* fades lighter */
+.feature--open { width: 300px; background: var(--card); }
+
+/* the clickable pill */
+.feature-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px 10px 12px;
+  border: none;
+  background: none;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;                              /* glove */
+}
+
+/* the + icon (rotates 45 degrees into an x) */
+.plus {
+  position: relative;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #FFFFFF;
+  border-radius: 50%;
+  transition: transform .3s ease;
+}
+.plus::before,
+.plus::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 1.5px;
+  background: #FFFFFF;
+  transform: translate(-50%, -50%);
+}
+.plus::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+/* open card: the toggle becomes the x in the top right corner */
+.feature--open .feature-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;                                   /* stays clickable above the text */
+  padding: 4px;
+  border-radius: 50%;
+}
+.feature--open .feature-name { display: none; }
+.feature--open .plus { transform: rotate(45deg); }
+
+/* description (hidden on pills) */
+.feature-body { display: none; }
+.feature--open .feature-body {
+  display: block;
+  padding: 18px 48px 22px 20px;
+  animation: text-in .3s ease .4s both;      /* fades in after the card grows */
+}
+@keyframes text-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.feature-body p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #E8E8ED;
+}
+.feature-body b { color: #FFFFFF; }
+
+/* ----- color dots (only in the Colors card) ----- */
+.dots {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+.dot {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 50%;
+  background: var(--dot);
+  box-shadow: 0 0 0 3px var(--card), 0 0 0 4px transparent;   /* ring hidden */
+  cursor: pointer;                              /* glove */
+  transition: box-shadow .2s;
+}
+.dot:hover,
+.dot--selected {
+  box-shadow: 0 0 0 3px var(--card), 0 0 0 4.5px #FFFFFF;      /* white ring fades in */
+}
+
+/* ----- progress bar (autoplay) ----- */
+.prog {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 10px;
+  height: 3px;
+  border-radius: 3px;
+  background: #4A4A4E;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.prog-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #FFFFFF;
+}
+/* shown in autoplay, and frozen (still shown) after Pause */
+.panel--auto   .feature--open .prog,
+.panel--paused .feature--open .prog { opacity: 1; }
+
+/* ----- image area ----- */
+.shots {
+  position: relative;
+  min-height: 420px;
+}
+.shot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity .5s ease, transform .5s ease;   /* fade + zoom 105% -> 100% */
+}
+.shot--active { opacity: 1; transform: scale(1); }
+.shot svg { width: auto; height: 380px; max-width: 100%; }
+
+/* phone color fades over 0.4 seconds */
+.phone-fill { fill: var(--phone); transition: fill .4s ease; }
+
+/* ----- Play/Pause button ----- */
+.pp-btn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+.pp-btn:hover { background: var(--pill-hover); }      /* fades lighter */
+
+/* pause icon (two bars) */
+.pp-btn::before,
+.pp-btn::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 4px;
+  height: 12px;
+  border-radius: 1px;
+  background: #FFFFFF;
+}
+.pp-btn::before { left: 12px; }
+.pp-btn::after  { right: 12px; }
+
+/* play icon (triangle) */
+.pp-btn--play::before {
+  left: 14px;
+  top: 11px;
+  width: 0;
+  height: 0;
+  border-radius: 0;
+  background: none;
+  border-left: 11px solid #FFFFFF;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+.pp-btn--play::after { display: none; }
+
+/* ----- "Take a closer look" button ----- */
+.tcl-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;                              /* glove */
+  transition: background-color .2s;
+  animation: fade-in .3s ease;
+}
+.tcl-btn:hover { background: var(--blue-dark); }      /* fades darker */
+.tcl-btn--leaving { animation: fade-out .2s ease forwards; }
+@keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-out { to { opacity: 0; } }
+
+/* link to the original */
+.original {
+  margin: 14px 0 28px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--gray-text);
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding-top: 8px;
+  padding-bottom: 40px;
+  font-size: 14px;
+  color: var(--gray-text);
+}
+
+/* ===== Smaller screens ===== */
+@media (max-width: 760px) {
+  .panel {
+    grid-template-columns: 1fr;
+    padding: 60px 20px 70px 64px;
+  }
+  .shots { min-height: 300px; order: -1; }
+  .shot svg { height: 280px; }
+  .feature--open { width: 100%; max-width: 300px; }
+  .demo, .panel { min-height: 0; }
+}
+
+@media (max-width: 560px) {
+  .wrap { padding: 0 16px; }
+  .wrap--wide { padding-top: 20px; }
+  .header h1 { font-size: 23px; }
+  .box { padding: 20px; border-radius: 20px; }
+  .panel { padding-left: 60px; padding-right: 14px; }
+  .nav { left: 12px; }
+}
